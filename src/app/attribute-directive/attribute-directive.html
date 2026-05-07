@@ -1,0 +1,26 @@
+<p>attribute-directive works!</p>
+
+<div [ngClass]="myclass">div 1</div>
+
+<button class="btn" [ngClass]="isActive == true ? 'btn-success' : 'btn-danger' " (click)="ToggleActivation()"> Active</button>
+
+<div class="row">
+    <input type="number" [(ngModel)]="marks">
+</div>
+
+<div class="row">
+    <p [ngClass]="marks > 50  ? 'text-primary' : 'text-danger' " > Marks: {{marks}} </p>
+</div>
+
+
+<div class="row">
+    <input type="text" [(ngModel)]="backColor"  ; >
+</div>
+
+<div [ngStyle]="{'background-color' : backColor}">
+    Div2
+</div>
+
+<div [ngStyle]="myCss">
+    Div2
+</div>
