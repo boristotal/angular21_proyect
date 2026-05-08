@@ -1,0 +1,90 @@
+<div class="container mt-4">
+  <div class="card shadow p-4">
+    <h3 class="mb-4">Employee Form</h3>
+
+    <form>
+      
+      <!-- Name -->
+      <div class="mb-3">
+        <label for="name" class="form-label">Employee Name</label>
+        <input 
+          type="text" 
+          class="form-control" 
+          id="name" 
+          placeholder="Enter employee name"
+        >
+      </div>
+
+      <!-- Role -->
+      <div class="mb-3">
+        <label for="role" class="form-label">Role</label>
+        <input 
+          type="text" 
+          class="form-control" 
+          id="role" 
+          placeholder="Enter role"
+        >
+      </div>
+
+      <!-- Department Dropdown -->
+      <div class="mb-3">
+        <label for="department" class="form-label">Department</label>
+        <select class="form-select" id="department">
+          <option selected disabled>Select Department</option>
+          <option value="HR">HR</option>
+          <option value="IT">IT</option>
+          <option value="Finance">Finance</option>
+          <option value="Marketing">Marketing</option>
+        </select>
+      </div>
+
+      <!-- Salary -->
+      <div class="mb-3">
+        <label for="salary" class="form-label">Salary</label>
+        <input 
+          type="number" 
+          class="form-control" 
+          id="salary" 
+          placeholder="Enter salary"
+        >
+      </div>
+
+      <!-- Active Status Radio -->
+      <div class="mb-3">
+        <label class="form-label d-block">Is Active</label>
+
+        <div class="form-check form-check-inline">
+          <input 
+            class="form-check-input" 
+            type="radio" 
+            name="isActive" 
+            id="activeYes" 
+            value="true"
+          >
+          <label class="form-check-label" for="activeYes">
+            Yes
+          </label>
+        </div>
+
+        <div class="form-check form-check-inline">
+          <input 
+            class="form-check-input" 
+            type="radio" 
+            name="isActive" 
+            id="activeNo" 
+            value="false"
+          >
+          <label class="form-check-label" for="activeNo">
+            No
+          </label>
+        </div>
+      </div>
+
+      <!-- Submit Button -->
+      <button type="submit" class="btn btn-primary">
+        Submit
+      </button>
+
+    </form>
+  </div>
+</div>

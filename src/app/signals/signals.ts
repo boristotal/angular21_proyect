@@ -4,6 +4,7 @@ import { Component, signal } from '@angular/core';
 
 @Component({
   selector: 'app-signals',
+  standalone: true,
   imports: [],
   templateUrl: './signals.html',
   styleUrl: './signals.css',

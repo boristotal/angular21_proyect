@@ -12,3 +12,4 @@ import { RouterLink, RouterOutlet } from '@angular/router';
 export class App {
   protected readonly title = signal('angular21_proyect');
 }
+// https://www.youtube.com/@techstack-h3d/videos

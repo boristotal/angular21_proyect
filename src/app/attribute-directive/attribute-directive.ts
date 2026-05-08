@@ -4,6 +4,7 @@ import { FormsModule } from '@angular/forms';
 
 @Component({
   selector: 'app-attribute-directive',
+  standalone: true,
   imports: [NgClass, FormsModule, NgStyle],
   templateUrl: './attribute-directive.html',
   styleUrl: './attribute-directive.css',

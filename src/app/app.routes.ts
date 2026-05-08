@@ -7,6 +7,7 @@ import { NotFound } from './not-found/not-found';
 import { Signals } from './signals/signals';
 import { ControlFlow } from './control-flow/control-flow';
 import { AttributeDirective } from './attribute-directive/attribute-directive';
+import { TemplateForm } from './template-form/template-form';
 
 export const routes: Routes = [
 {path: '', redirectTo: 'data-binding', pathMatch: 'full'},  
@@ -18,6 +19,7 @@ export const routes: Routes = [
 {path: 'signals',               component: Signals} ,
 {path: 'control-flow',          component: ControlFlow},
 {path: 'attribute-directive',   component: AttributeDirective},
+{path: 'template-form',         component: TemplateForm},
 {path: '**',                    component: NotFound} 
 
 ];
