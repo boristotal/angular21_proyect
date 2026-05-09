@@ -9,15 +9,19 @@
         <label for="name" class="form-label">Employee Name</label>
         <input 
           type="text" 
+
+            #name="ngModel"
+
           class="form-control" [(ngModel)]="empObj.name"
           id="name" 
           
-          required minlength="5"
-          name = "name"
+            required minlength="5"
+            name = "name"
           
           placeholder="Enter employee name"
         >
-        <div>
+        <div class="text-danger">
+          --{{ name.errors | json }}
           <span>this is required</span>
           <span>Min 5 Characters needed</span>
         </div>
