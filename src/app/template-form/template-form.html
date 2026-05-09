@@ -9,10 +9,18 @@
         <label for="name" class="form-label">Employee Name</label>
         <input 
           type="text" 
-          class="form-control" 
+          class="form-control" [(ngModel)]="empObj.name"
           id="name" 
+          
+          required minlength="5"
+          name = "name"
+          
           placeholder="Enter employee name"
         >
+        <div>
+          <span>this is required</span>
+          <span>Min 5 Characters needed</span>
+        </div>
       </div>
 
       <!-- Role -->
@@ -20,8 +28,9 @@
         <label for="role" class="form-label">Role</label>
         <input 
           type="text" 
-          class="form-control" 
+          class="form-control" [(ngModel)]="empObj.role"
           id="role" 
+          name = "role"
           placeholder="Enter role"
         >
       </div>
@@ -29,7 +38,9 @@
       <!-- Department Dropdown -->
       <div class="mb-3">
         <label for="department" class="form-label">Department</label>
-        <select class="form-select" id="department">
+        <select class="form-select"  [(ngModel)]="empObj.department"
+        id="department"
+        name = "department">
           <option selected disabled>Select Department</option>
           <option value="HR">HR</option>
           <option value="IT">IT</option>
@@ -43,8 +54,9 @@
         <label for="salary" class="form-label">Salary</label>
         <input 
           type="number" 
-          class="form-control" 
+          class="form-control" [(ngModel)]="empObj.salary"
           id="salary" 
+          name = "salary"
           placeholder="Enter salary"
         >
       </div>
