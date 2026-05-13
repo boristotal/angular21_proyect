@@ -2,7 +2,7 @@
   <div class="card shadow p-4">
     <h3 class="mb-4">Employee Form</h3>
 
-    <form>
+    <form #FormData="ngForm" >
       
       <!-- Name -->
       <div class="mb-3">
@@ -104,8 +104,8 @@
       </div>
 
       <!-- Submit Button -->
-      <button type="submit" class="btn btn-primary">
-        Submit
+      <button type="submit" [disabled]="FormData.invalid" class="btn btn-primary">
+        Save Employee
       </button>
 
     </form>
