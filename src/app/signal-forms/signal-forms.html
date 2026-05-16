@@ -9,6 +9,14 @@
     <div class="col">
         <label for="email">Email:</label>
         <input id="email" type="email" [formField]="empForm.email">
+            <div class="text_danger">   
+                @for(item of empForm.email().errors(); track $index)  
+                {
+                    <span>{{item.message}}</span>
+                } 
+                    
+            </div>
+
     </div>
 </div>
 
