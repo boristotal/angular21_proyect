@@ -1,1 +1,96 @@
 <p>data-binding works!</p>
+
+
+
+CREATE TABLE alarmalog (
+  Puerto int(11) default NULL,
+  Dispositivo char(10) character set utf8 NOT NULL,
+  Bloque char(10) character set utf8 default NULL,
+  Nombre char(20) character set utf8 NOT NULL,
+  fecha datetime NOT NULL,
+  Grupo char(10) character set utf8 default NULL,
+  Orden int(11) default NULL,
+  Alarma1 int(11) default NULL,
+  Alarma2 int(11) default NULL,
+  Inicio decimal(18,0) default NULL,
+  Largo decimal(18,0) default NULL,
+  Valor float default NULL,
+  Consecutivo int(20) NOT NULL,
+  PRIMARY KEY  (Dispositivo,Nombre,fecha,Consecutivo)
+) ENGINE=InnoDB DEFAULT CHARSET=latin1;
+
+Thought for a second
+Veo que compartiste el CREATE TABLE de alarmalog.
+
+¿Qué necesitas hacer con esta tabla: optimizarla, convertirla a otra versión de MySQL/MariaDB, crear índices, corregir errores, o generar consultas?
+
+
+
+create a simple Bootstrap based HTML form
+do not include body tag
+use appropiate input fields, textbox, dropdown and radio 
+
+<form class="container mt-4">
+  <div class="mb-3">
+    <label for="dispositivo" class="form-label">Dispositivo</label>
+    <input type="text" class="form-control" id="dispositivo" name="Dispositivo" maxlength="10" required>
+  </div>
+
+  <div class="mb-3">
+    <label for="nombre" class="form-label">Nombre</label>
+    <input type="text" class="form-control" id="nombre" name="Nombre" maxlength="20" required>
+  </div>
+
+  <div class="mb-3">
+    <label for="fecha" class="form-label">Fecha</label>
+    <input type="datetime-local" class="form-control" id="fecha" name="fecha" required>
+  </div>
+
+  <div class="mb-3">
+    <label for="puerto" class="form-label">Puerto</label>
+    <input type="number" class="form-control" id="puerto" name="Puerto">
+  </div>
+
+  <div class="mb-3">
+    <label for="grupo" class="form-label">Grupo</label>
+    <select class="form-select" id="grupo" name="Grupo">
+      <option value="">Seleccione un grupo</option>
+      <option value="Grupo1">Grupo 1</option>
+      <option value="Grupo2">Grupo 2</option>
+      <option value="Grupo3">Grupo 3</option>
+    </select>
+  </div>
+
+  <div class="mb-3">
+    <label class="form-label">Estado de alarma</label>
+
+    <div class="form-check">
+      <input class="form-check-input" type="radio" name="estadoAlarma" id="alarmaActiva" value="activa">
+      <label class="form-check-label" for="alarmaActiva">
+        Activa
+      </label>
+    </div>
+
+    <div class="form-check">
+      <input class="form-check-input" type="radio" name="estadoAlarma" id="alarmaInactiva" value="inactiva">
+      <label class="form-check-label" for="alarmaInactiva">
+        Inactiva
+      </label>
+    </div>
+  </div>
+
+  <div class="mb-3">
+    <label for="valor" class="form-label">Valor</label>
+    <input type="number" step="any" class="form-control" id="valor" name="Valor">
+  </div>
+
+  <div class="mb-3">
+    <label for="observaciones" class="form-label">Observaciones</label>
+    <textarea class="form-control" id="observaciones" name="observaciones" rows="3"></textarea>
+  </div>
+
+  <button type="submit" class="btn btn-primary">Guardar</button>
+  <button type="reset" class="btn btn-secondary">Limpiar</button>
+</form>
+
+

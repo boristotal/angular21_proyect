@@ -9,10 +9,10 @@ import { ControlFlow } from './control-flow/control-flow';
 import { AttributeDirective } from './attribute-directive/attribute-directive';
 import { TemplateForm } from './template-form/template-form';
 import { ReactiveForms } from './reactive-forms/reactive-forms';
+import { SignalForms } from './signal-forms/signal-forms';
 
 export const routes: Routes = [
-{path: '', redirectTo: 'data-binding', pathMatch: 'full'},  
-
+{path: '', redirectTo: 'data-binding', pathMatch: 'full'}, 
 {path: 'add-employee',          component: AddEmployee}, 
 {path: 'data-binding',          component: DataBinding}, 
 {path: 'employe-list',          component: EmployeList}, 
@@ -22,6 +22,7 @@ export const routes: Routes = [
 {path: 'attribute-directive',   component: AttributeDirective},
 {path: 'template-form',         component: TemplateForm},
 {path: 'reactive-forms',        component: ReactiveForms},
+{path: 'signal-forms',          component: SignalForms},
 {path: '**',                    component: NotFound} 
 
 ];

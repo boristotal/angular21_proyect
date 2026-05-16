@@ -1,0 +1,17 @@
+<p>signal-forms works!</p>
+
+<div class="row">empform: </div>
+<div class="row">
+    <div class="col">
+        <label for="name">Name:</label>
+        <input id="name" type="text" [formField]="empForm.name">
+    </div>
+    <div class="col">
+        <label for="email">Email:</label>
+        <input id="email" type="email" [formField]="empForm.email">
+    </div>
+</div>
+
+<div>{{empForm().value()|json}} </div>
+
+
