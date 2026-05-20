@@ -10,6 +10,9 @@ import { AttributeDirective } from './attribute-directive/attribute-directive';
 import { TemplateForm } from './template-form/template-form';
 import { ReactiveForms } from './reactive-forms/reactive-forms';
 import { SignalForms } from './signal-forms/signal-forms';
+import { Header } from './header/header';
+import { Header02 } from './header02/header02';
+
 
 export const routes: Routes = [
 {path: '', redirectTo: 'data-binding', pathMatch: 'full'}, 
@@ -23,6 +26,8 @@ export const routes: Routes = [
 {path: 'template-form',         component: TemplateForm},
 {path: 'reactive-forms',        component: ReactiveForms},
 {path: 'signal-forms',          component: SignalForms},
+{path: 'header',                component: Header},
+{path: 'header02',                component: Header02},
 {path: '**',                    component: NotFound} 
 
 ];

@@ -1,0 +1,94 @@
+.navbar {
+  width: 100%;
+  background: #1f2937;
+  font-family: Arial, sans-serif;
+}
+
+.menu,
+.submenu {
+  list-style: none;
+  padding: 0;
+  margin: 0;
+}
+
+.menu {
+  display: flex;
+}
+
+.menu-item {
+  position: relative;
+}
+
+.menu-button,
+.menu-link {
+  width: 100%;
+  min-width: 160px;
+  padding: 14px 18px;
+  border: none;
+  color: white;
+  background: #1f2937;
+  text-decoration: none;
+  cursor: pointer;
+  display: flex;
+  justify-content: space-between;
+  gap: 12px;
+  box-sizing: border-box;
+}
+
+.menu-button:hover,
+.menu-link:hover {
+  background: #374151;
+}
+
+.submenu {
+  position: absolute;
+  top: 100%;
+  left: 0;
+  min-width: 200px;
+  background: #374151;
+  z-index: 10;
+}
+
+.level-2 .submenu {
+  top: 0;
+  left: 100%;
+}
+
+.level-2 .menu-button,
+.level-2 .menu-link {
+  background: #374151;
+}
+
+.level-3 .menu-link {
+  background: #4b5563;
+}
+
+/* Responsive: horizontal a vertical */
+@media (max-width: 768px) {
+  .menu {
+    flex-direction: column;
+  }
+
+  .menu-button,
+  .menu-link {
+    min-width: 100%;
+  }
+
+  .submenu {
+    position: static;
+    min-width: 100%;
+  }
+
+  .level-2 .submenu {
+    position: static;
+  }
+
+  .level-2 .menu-button,
+  .level-2 .menu-link {
+    padding-left: 32px;
+  }
+
+  .level-3 .menu-link {
+    padding-left: 52px;
+  }
+}

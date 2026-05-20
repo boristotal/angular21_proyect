@@ -1,25 +1,21 @@
-import { CommonModule } from '@angular/common';
 import { Component } from '@angular/core';
+import { CommonModule } from '@angular/common';
+
 
 interface MenuItem {
   title: string;
   open?: boolean;
-  url?: any;
+  url?: string;
   children?: MenuItem[];
 }
 
 @Component({
-  selector: 'app-variables',
-  imports: [CommonModule],
-  standalone: true,
-  templateUrl: './variables.html',
-  styleUrl: './variables.css',
+  selector: 'app-header02',
+  imports: [CommonModule ],
+  templateUrl: './header02.html',
+  styleUrl: './header02.css',
 })
-export class Variables 
-
- {
-
-  
+export class Header02 {
   menu: MenuItem[] = [
     {
       title: 'Inicio',
@@ -27,9 +23,8 @@ export class Variables
         {
           title: 'Dashboard',
           children: [
-            //this.router.navigate(['/dashboard']); 
-            { title: 'Google', url: '/signal-forms'  },
             { title: 'Angular', url: 'https://angular.dev' },
+            { title: 'Google', url: 'https://www.google.com' },
             { title: 'GitHub', url: 'https://github.com' }
           ]
         },
@@ -42,11 +37,11 @@ export class Variables
           ]
         },
         {
-          title: 'Accesos rápidos',
+          title: 'Ayuda',
           children: [
-            { title: 'YouTube', url: 'https://www.youtube.com' },
-            { title: 'Wikipedia', url: 'https://www.wikipedia.org' },
-            { title: 'Stack Overflow', url: 'https://stackoverflow.com' }
+            { title: 'MDN', url: 'https://developer.mozilla.org' },
+            { title: 'Stack Overflow', url: 'https://stackoverflow.com' },
+            { title: 'Wikipedia', url: 'https://www.wikipedia.org' }
           ]
         }
       ]
@@ -65,17 +60,17 @@ export class Variables
         {
           title: 'Roles',
           children: [
-            { title: 'MDN', url: 'https://developer.mozilla.org' },
             { title: 'TypeScript', url: 'https://www.typescriptlang.org' },
-            { title: 'Node.js', url: 'https://nodejs.org' }
+            { title: 'Node.js', url: 'https://nodejs.org' },
+            { title: 'NPM', url: 'https://www.npmjs.com' }
           ]
         },
         {
           title: 'Permisos',
           children: [
-            { title: 'NPM', url: 'https://www.npmjs.com' },
             { title: 'Vercel', url: 'https://vercel.com' },
-            { title: 'Netlify', url: 'https://www.netlify.com' }
+            { title: 'Netlify', url: 'https://www.netlify.com' },
+            { title: 'Cloudflare', url: 'https://www.cloudflare.com' }
           ]
         }
       ]
@@ -115,9 +110,9 @@ export class Variables
         {
           title: 'Ventas',
           children: [
-            { title: 'Google Analytics', url: 'https://analytics.google.com' },
-            { title: 'Looker Studio', url: 'https://lookerstudio.google.com' },
-            { title: 'Power BI', url: 'https://powerbi.microsoft.com' }
+            { title: 'Analytics', url: 'https://analytics.google.com' },
+            { title: 'Power BI', url: 'https://powerbi.microsoft.com' },
+            { title: 'Looker Studio', url: 'https://lookerstudio.google.com' }
           ]
         },
         {
@@ -145,8 +140,8 @@ export class Variables
           title: 'Perfil',
           children: [
             { title: 'Gravatar', url: 'https://gravatar.com' },
-            { title: 'About.me', url: 'https://about.me' },
-            { title: 'Notion', url: 'https://www.notion.so' }
+            { title: 'Notion', url: 'https://www.notion.so' },
+            { title: 'About.me', url: 'https://about.me' }
           ]
         },
         {
@@ -169,8 +164,25 @@ export class Variables
     }
   ];
 
-  toggle(item: MenuItem): void {
-    item.open = !item.open;
+  toggle(selectedItem: MenuItem, items: MenuItem[]): void {
+    items.forEach(item => {
+      if (item !== selectedItem) {
+        this.closeAll(item);
+      }
+    });
+
+    selectedItem.open = !selectedItem.open;
+  }
+
+  closeAll(item: MenuItem): void {
+    item.open = false;
+
+    item.children?.forEach(child => {
+      this.closeAll(child);
+    });
+  }
+
+  closeMenu(): void {
+    this.menu.forEach(item => this.closeAll(item));
   }
 }
-

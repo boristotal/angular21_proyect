@@ -1,0 +1,49 @@
+/* app.component.css */
+.sidebar {
+  width: 280px;
+  min-height: 100vh;
+  background: #1f2937;
+  padding: 12px;
+  font-family: Arial, sans-serif;
+}
+
+.menu,
+.submenu {
+  list-style: none;
+  padding: 0;
+  margin: 0;
+}
+
+.menu-button {
+  width: 100%;
+  border: none;
+  cursor: pointer;
+  color: white;
+  padding: 12px;
+  margin-bottom: 6px;
+  border-radius: 6px;
+  background: #374151;
+  display: flex;
+  justify-content: space-between;
+  align-items: center;
+  text-align: left;
+}
+
+.menu-button:hover {
+  background: #4b5563;
+}
+
+.level-2 .menu-button {
+  background: #4b5563;
+  padding-left: 24px;
+}
+
+.level-3 .menu-button {
+  background: #6b7280;
+  padding-left: 40px;
+  font-size: 14px;
+}
+
+.submenu {
+  margin-left: 8px;
+}

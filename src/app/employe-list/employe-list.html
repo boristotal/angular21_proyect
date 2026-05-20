@@ -1,1 +1,17 @@
 <p>employe-list works!</p>
+
+
+<nav class="sidebar">
+  <div *ngFor="let item of menu" class="menu-item">
+    <button class="menu-button" (click)="item.open = !item.open">
+      {{ item.title }}
+      <span>{{ item.open ? '▲' : '▼' }}</span>
+    </button>
+
+    <ul *ngIf="item.open" class="submenu">
+      <li *ngFor="let sub of item.subitems">
+        <a href="#">{{ sub }}</a>
+      </li>
+    </ul>
+  </div>
+</nav>

@@ -1,1 +1,23 @@
 <p>add-employee works!</p>
+
+<!-- app.component.html -->
+<nav class="sidebar">
+  <ul class="menu">
+    <ng-container *ngTemplateOutlet="menuTemplate; context: { items: menu, level: 1 }"></ng-container>
+  </ul>
+</nav>
+
+<ng-template #menuTemplate let-items="items" let-level="level">
+  <li *ngFor="let item of items" class="menu-item" [class]="'level-' + level">
+    <button class="menu-button" (click)="toggle(item)">
+      <span>{{ item.title }}</span>  
+      <span *ngIf="item.children?.length">{{ item.open ? '▲' : '▼' }}</span>
+    </button>
+
+    <ul *ngIf="item.open && item.children?.length" class="submenu">
+      <ng-container
+        *ngTemplateOutlet="menuTemplate; context: { items: item.children, level: level + 1 }">
+      </ng-container>
+    </ul>
+  </li>
+</ng-template>

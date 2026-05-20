@@ -1,20 +1,22 @@
-<p>variables works!</p>
+<p>header02 works!</p>
 
 <!-- app.component.html -->
-<nav class="sidebar">
+<nav class="navbar">
   <ul class="menu">
-    <ng-container *ngTemplateOutlet="menuTemplate; context: { items: menu, level: 1 }"></ng-container>
+    <ng-container
+      *ngTemplateOutlet="menuTemplate; context: { items: menu, level: 1 }">
+    </ng-container>
   </ul>
 </nav>
 
 <ng-template #menuTemplate let-items="items" let-level="level">
-  <li *ngFor="let item of items" class="menu-item" [class]="'level-' + level">
-    
+  <li class="menu-item" [class]="'level-' + level" *ngFor="let item of items">
+
     <button
       *ngIf="item.children?.length"
       class="menu-button"
       type="button"
-      (click)="toggle(item)">
+      (click)="toggle(item, items)">
       <span>{{ item.title }}</span>
       <span>{{ item.open ? '▲' : '▼' }}</span>
     </button>
@@ -24,7 +26,8 @@
       class="menu-link"
       [href]="item.url"
       target="_blank"
-      rel="noopener noreferrer">
+      rel="noopener noreferrer"
+      (click)="closeMenu()">
       {{ item.title }}
     </a>
 

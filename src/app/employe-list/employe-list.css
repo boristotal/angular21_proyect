@@ -1,0 +1,24 @@
+
+
+.menu-button:hover {
+  background: #4b5563;
+}
+
+.submenu {
+  list-style: none;
+  padding-left: 16px;
+  margin-top: 6px;
+}
+
+.submenu li {
+  margin: 8px 0;
+}
+
+.submenu a {
+  color: #d1d5db;
+  text-decoration: none;
+}
+
+.submenu a:hover {
+  color: white;
+}
