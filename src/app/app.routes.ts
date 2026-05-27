@@ -12,6 +12,8 @@ import { ReactiveForms } from './reactive-forms/reactive-forms';
 import { SignalForms } from './signal-forms/signal-forms';
 import { Header } from './header/header';
 import { Header02 } from './header02/header02';
+import { ProductsDashboard } from './products-dashboard/products-dashboard';
+import { FormComponent } from './form-component/form-component';
 
 
 export const routes: Routes = [
@@ -27,7 +29,10 @@ export const routes: Routes = [
 {path: 'reactive-forms',        component: ReactiveForms},
 {path: 'signal-forms',          component: SignalForms},
 {path: 'header',                component: Header},
-{path: 'header02',                component: Header02},
+{path: 'header02',              component: Header02},
+{path: 'products-dashboard',    component: ProductsDashboard},
+{path: 'form-component',        component: FormComponent},
+
 {path: '**',                    component: NotFound} 
 
 ];

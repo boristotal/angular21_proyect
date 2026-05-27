@@ -1,0 +1,46 @@
+<p>form-component works!</p>
+<div>
+<form>
+    <label>
+        Username
+        <input  type="text"  [formField]="signupform.username" autocomplete="none" />
+    </label>
+
+    @if (signupform.username().touched() && signupform.username().invalid()) {
+        <ul>
+            @for (error of signupform.username().errors() ; track error.kind   ) {
+                 <li>{{error.message}}</li>
+            }
+        </ul>
+    }
+
+    <label>
+        Email:
+        <input  type="email"  [formField]="signupform.email" autocomplete="none" />
+    </label>
+
+        @if (signupform.email().touched() && signupform.email().invalid()) {
+        <ul>
+            @for (error of signupform.email().errors() ; track error.kind   ) {
+                 <li>{{error.message}}</li>
+            }
+        </ul>
+    }
+
+    <label>
+        Age:
+        <input  type="number"  [formField]="signupform.age" autocomplete="none" />
+    </label>
+
+        @if (signupform.age().touched() && signupform.age().invalid()) {
+        <ul>
+            @for (error of signupform.age().errors() ; track error.kind   ) {
+                 <li>{{error.message}}</li>
+            }
+        </ul>
+    }
+  <button type="submit"  [disabled]="signupform().invalid()" >Submit</button>
+
+</form>
+    <pre>{{model() | json}}</pre>
+</div>

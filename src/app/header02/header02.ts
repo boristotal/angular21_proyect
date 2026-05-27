@@ -157,7 +157,7 @@ export class Header02 {
           children: [
             { title: 'Chrome', url: 'https://www.google.com/chrome' },
             { title: 'Firefox', url: 'https://www.mozilla.org/firefox' },
-            { title: 'Edge', url: 'https://www.microsoft.com/edge' }
+            { title: 'form component', url: '/form-component' }
           ]
         }
       ]

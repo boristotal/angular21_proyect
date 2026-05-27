@@ -2,8 +2,6 @@ import { Component,signal } from '@angular/core';
 import { form, email, Field, FormField, required } from '@angular/forms/signals';
 import { CommonModule,JsonPipe } from '@angular/common';
 
-
-
 @Component({
   selector: 'app-signal-forms',
   standalone: true, 
@@ -14,14 +12,10 @@ import { CommonModule,JsonPipe } from '@angular/common';
 export class SignalForms {
   empModel = signal(    { name: 'John Doe', email: 'john.doe@example.com' }   )
   
-  
   empForm = form(this.empModel,
-
-
   (schema) => {
     required(schema.name,{message: 'Name is required'}),
     required(schema.email,{message: 'Email is required'}),
-
     email(schema.email,{message: 'Email must be valid'} ) 
     }
   )

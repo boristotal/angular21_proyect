@@ -7,6 +7,7 @@ interface MenuItem {
   url?: string;
   children?: MenuItem[];
 }
+// {"username":"testuser","email":"testuser@example.com","age":30}
 
 @Component({
   selector: 'app-header',
@@ -117,7 +118,7 @@ export class Header {
         { title: 'Preferencias', children: [
           { title: 'Chrome', url: 'https://www.google.com/chrome' },
           { title: 'Firefox', url: 'https://www.mozilla.org/firefox' },
-          { title: 'Edge', url: 'https://www.microsoft.com/edge' }
+          { title: 'Products', url: '/products-dashboard' }
         ]}
       ]
     }
