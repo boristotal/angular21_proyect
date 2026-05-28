@@ -6,7 +6,7 @@ import {
 
 } from '@angular/core';
 
-import { form, FormField, required } from '@angular/forms/signals';
+import { form, FormField, required, email , min, max } from '@angular/forms/signals';
 import {  Validators } from '@angular/forms';
 
 interface SignupFormData {
@@ -34,9 +34,9 @@ export class FormComponent {
     required(s.username,{message: 'Username is required'}) ;
     required(s.email,{message: 'Email is required'}) ;
     required(s.age,{message: 'Age is required'}) ;
-
-    // min(s.age,18,{message: 'Age must be at least 18'}) ;
-    // max(s.age,120,{message: 'Age must be less than or equal to 120'} ) ;
+    email(s.email,{message: 'Email must be a valid email address'}) ;
+    min(s.age,18,{message: 'Age must be at least 18'}) ;
+    max(s.age,120,{message: 'Age must be less than or equal to 120'} ) ;
 
   }); 
 
