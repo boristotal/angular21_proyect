@@ -14,7 +14,8 @@ import { Header } from './header/header';
 import { Header02 } from './header02/header02';
 import { ProductsDashboard } from './products-dashboard/products-dashboard';
 import { FormComponent } from './form-component/form-component';
-
+import { Grid } from './grid/grid';
+import { Grid02 } from './grid02/grid02';
 
 export const routes: Routes = [
 {path: '', redirectTo: 'data-binding', pathMatch: 'full'}, 
@@ -32,7 +33,8 @@ export const routes: Routes = [
 {path: 'header02',              component: Header02},
 {path: 'products-dashboard',    component: ProductsDashboard},
 {path: 'form-component',        component: FormComponent},
-
+{path: 'grid',                  component: Grid},
+{path: 'grid02',                component: Grid02},
 {path: '**',                    component: NotFound} 
 
 ];

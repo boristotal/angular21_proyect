@@ -1,5 +1,5 @@
 import { Component,signal } from '@angular/core';
-import { form, email, FormField, required } from '@angular/forms/signals';
+import { form, email, min, max , FormField, required } from '@angular/forms/signals';
 import { JsonPipe } from '@angular/common';
 
 @Component({
@@ -19,8 +19,11 @@ export class SignalForms {
     email(schema.email,{message: 'Email must be valid'} ) ,
     required(schema.otro,{message: 'otro is required'}),
     required(schema.entero,{message: 'entero is required'})
-    // min(schema.entero, {value: 1, message: 'entero must be at least 1'}),
-    //max(schema.entero, {value: 10, message: 'entero must be at most 10'}) 
+
+     min(schema.entero,18,{message: 'Age must be at least 18'}) ; 
+     max(schema.entero,120,{message: 'Age must be less than or equal to 120'} ) ;
+
+
     }
   )
 
