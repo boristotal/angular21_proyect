@@ -1,1 +1,62 @@
 <p>grid02 works!</p>
+
+
+<div class="grid-wrapper">
+  <div role="grid" aria-label="Lista de usuarios" class="grid">
+
+    <div role="row" class="grid-row grid-header">
+      <button
+        role="columnheader"
+        [attr.aria-sort]="getAriaSort('usuario')"
+        (click)="ordenarPor('usuario')">
+        Usuario
+      </button>
+
+      <button
+        role="columnheader"
+        [attr.aria-sort]="getAriaSort('password')"
+        (click)="ordenarPor('password')">
+        Password
+      </button>
+
+      <button
+        role="columnheader"
+        [attr.aria-sort]="getAriaSort('Status')"
+        (click)="ordenarPor('Status')">
+        Status
+      </button>
+    </div>
+
+ 
+    <div role="row" class="grid-row" *ngFor="let item of registros()">
+      <button
+        role="gridcell"
+        class="link-cell"
+        (click)="editarUsuario(item.id)">
+        {{ item.usuario }}
+      </button>
+
+      <div role="gridcell">
+        {{ item.password }}
+      </div>
+
+      <div role="gridcell">
+        {{ item.Status }}
+      </div>
+    </div>
+
+  </div>
+
+  <div class="pagination" aria-label="Paginación">
+    <button (click)="paginaAnterior()" [disabled]="page === 1">
+      Anterior
+    </button>
+
+    <span>Página {{ page }} de {{ totalPages }}</span>
+
+    <button (click)="paginaSiguiente()" [disabled]="page === totalPages">
+      Siguiente
+    </button>
+  </div>
+</div>
+
