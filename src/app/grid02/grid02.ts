@@ -2,6 +2,7 @@ import { Component, OnInit , inject, signal} from '@angular/core';
 import { Router } from '@angular/router';
 import { Dbconection } from '../services/dbconection';
 import {NgFor} from '@angular/common';
+import { Grid } from '../grid/grid';
 
 //import { Grid } from '../grid/grid';
 
@@ -18,7 +19,7 @@ type SortDirection = 'asc' | 'desc';
 @Component({
   standalone: true,
   selector: 'app-grid02',
-  imports: [NgFor],
+  imports: [NgFor,Grid ],
   templateUrl: './grid02.html',
   styleUrl: './grid02.css',
 })
@@ -29,6 +30,8 @@ export class Grid02 implements OnInit {
   registros = signal<any[]>([]);
   cargando = signal<boolean>(true);
   error = signal<string | null>(null);
+
+  grid: Grid; 
 /*from Red */
 
 data: UsuarioGrid[] = [];
@@ -51,7 +54,13 @@ data: UsuarioGrid[] = [];
     
   ) {
   console.log('Cargando registros...1');
+  this.grid = new Grid();
+
+  
+  
   this.cargarRegistros('http://monitor02.redirectme.net:3030/tgcomm/dbcommapi0002.php/?nombre=Laura&edad=54&camposRequest=id,usuario,password,Status&tablaRequest=usuario',"");
+
+this.grid.datoRecibido = 'Valor desde Grid02';
 
   }
 
@@ -106,7 +115,8 @@ data: UsuarioGrid[] = [];
   }
 
   editarUsuario(id: number): void {
-    this.router.navigate(['/usuarios', id, 'editar']);
+    this.grid.datoRecibido = 'Valor actualizado desde Grid02';
+    this.router.navigate(['/grid', { datoRecibido: id }]);
   }
 
   paginaAnterior(): void {

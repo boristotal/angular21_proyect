@@ -47,7 +47,7 @@ CREATE TABLE `usuario` (
 
 
 
-import { Component } from '@angular/core';
+import { Component , Input } from '@angular/core';
 import { CommonModule } from '@angular/common';
 
 
@@ -71,6 +71,9 @@ type SortDirection = 'asc' | 'desc';
 })
 
 export class Grid {
+
+    @Input() datoRecibido: string = 'abc';
+
   usuarios: Usuario[] = [
     { nombre: 'Juan', apellido: 'Pérez', correo: 'juan@email.com', edad: 28 },
     { nombre: 'Ana', apellido: 'López', correo: 'ana@email.com', edad: 34 },
