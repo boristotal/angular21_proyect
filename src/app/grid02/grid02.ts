@@ -1,4 +1,4 @@
-import { Component, OnInit , inject, signal} from '@angular/core';
+import { Component, OnInit, inject, signal, ChangeDetectionStrategy } from '@angular/core';
 import { Router } from '@angular/router';
 import { Dbconection } from '../services/dbconection';
 import {NgFor} from '@angular/common';
@@ -21,6 +21,7 @@ type SortDirection = 'asc' | 'desc';
   selector: 'app-grid02',
   imports: [NgFor,Grid ],
   templateUrl: './grid02.html',
+  changeDetection: ChangeDetectionStrategy.Eager,
   styleUrl: './grid02.css',
 })
 export class Grid02 implements OnInit {

@@ -47,7 +47,7 @@ CREATE TABLE `usuario` (
 
 
 
-import { Component , Input } from '@angular/core';
+import { Component, Input, ChangeDetectionStrategy } from '@angular/core';
 import { CommonModule } from '@angular/common';
 
 
@@ -67,6 +67,7 @@ type SortDirection = 'asc' | 'desc';
   selector: 'app-grid',
   imports: [CommonModule],
   templateUrl: './grid.html',
+  changeDetection: ChangeDetectionStrategy.Eager,
   styleUrl: './grid.css',
 })
 

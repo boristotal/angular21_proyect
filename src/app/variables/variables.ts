@@ -1,5 +1,5 @@
 import { CommonModule } from '@angular/common';
-import { Component } from '@angular/core';
+import { Component, ChangeDetectionStrategy } from '@angular/core';
 
 interface MenuItem {
   title: string;
@@ -13,6 +13,7 @@ interface MenuItem {
   imports: [CommonModule],
   standalone: true,
   templateUrl: './variables.html',
+  changeDetection: ChangeDetectionStrategy.Eager,
   styleUrl: './variables.css',
 })
 export class Variables 

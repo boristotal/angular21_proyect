@@ -1,5 +1,5 @@
 import { NgClass, NgStyle } from '@angular/common';
-import { Component } from '@angular/core';
+import { Component, ChangeDetectionStrategy } from '@angular/core';
 import { FormsModule } from '@angular/forms';
 
 @Component({
@@ -7,6 +7,7 @@ import { FormsModule } from '@angular/forms';
   standalone: true,
   imports: [NgClass, FormsModule, NgStyle],
   templateUrl: './attribute-directive.html',
+  changeDetection: ChangeDetectionStrategy.Eager,
   styleUrl: './attribute-directive.css',
 })
 export class AttributeDirective {

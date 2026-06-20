@@ -1,4 +1,4 @@
-import { Component } from '@angular/core';
+import { Component, ChangeDetectionStrategy } from '@angular/core';
 import { CommonModule } from '@angular/common';
 
 
@@ -13,6 +13,7 @@ interface MenuItem {
   selector: 'app-header02',
   imports: [CommonModule ],
   templateUrl: './header02.html',
+  changeDetection: ChangeDetectionStrategy.Eager,
   styleUrl: './header02.css',
 })
 export class Header02 {

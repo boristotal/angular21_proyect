@@ -1,7 +1,7 @@
 import { CommonModule } from '@angular/common';
 
 
-import { Component, signal } from '@angular/core';
+import { Component, signal, ChangeDetectionStrategy } from '@angular/core';
 import { RouterLink, RouterOutlet } from '@angular/router';
 import { TemplateForm } from '../template-form/template-form';
 
@@ -18,6 +18,7 @@ interface MenuItem {
   imports: [CommonModule, RouterLink, RouterOutlet],
   standalone: true,
   templateUrl: './add-employee.html',
+  changeDetection: ChangeDetectionStrategy.Eager,
   styleUrl: './add-employee.css',
 })
 export class AddEmployee {

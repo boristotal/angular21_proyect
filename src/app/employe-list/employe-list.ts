@@ -1,11 +1,12 @@
 import { CommonModule } from '@angular/common';
-import { Component } from '@angular/core';
+import { Component, ChangeDetectionStrategy } from '@angular/core';
 
 @Component({
   selector: 'app-employe-list',
   imports: [CommonModule],
   standalone: true,
   templateUrl: './employe-list.html',
+  changeDetection: ChangeDetectionStrategy.Eager,
   styleUrl: './employe-list.css',
 })
 export class EmployeList {

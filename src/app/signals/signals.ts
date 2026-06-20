@@ -1,4 +1,4 @@
-import { Component, signal } from '@angular/core';
+import { Component, signal, ChangeDetectionStrategy } from '@angular/core';
 
 
 
@@ -7,6 +7,7 @@ import { Component, signal } from '@angular/core';
   standalone: true,
   imports: [],
   templateUrl: './signals.html',
+  changeDetection: ChangeDetectionStrategy.Eager,
   styleUrl: './signals.css',
 })
 export class Signals {

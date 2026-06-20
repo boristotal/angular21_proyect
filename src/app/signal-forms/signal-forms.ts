@@ -1,4 +1,4 @@
-import { Component,signal } from '@angular/core';
+import { Component, signal, ChangeDetectionStrategy } from '@angular/core';
 import { form, email, min, max , FormField, required } from '@angular/forms/signals';
 import { JsonPipe } from '@angular/common';
 
@@ -7,6 +7,7 @@ import { JsonPipe } from '@angular/common';
   standalone: true, 
   imports: [FormField,JsonPipe ], 
   templateUrl: './signal-forms.html',
+  changeDetection: ChangeDetectionStrategy.Eager,
   styleUrl: './signal-forms.css',
 })
 export class SignalForms {

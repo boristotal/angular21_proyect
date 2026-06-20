@@ -1,4 +1,4 @@
-import { Component,WritableSignal,signal} from '@angular/core';
+import { Component, WritableSignal, signal, ChangeDetectionStrategy } from '@angular/core';
 import { FormsModule } from '@angular/forms';
 
 
@@ -7,6 +7,7 @@ import { FormsModule } from '@angular/forms';
   imports: [FormsModule],
   standalone : true ,
   templateUrl: './control-flow.html',
+  changeDetection: ChangeDetectionStrategy.Eager,
   styleUrl: './control-flow.css',
 })
 export class ControlFlow {
